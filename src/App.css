@@ -1,38 +1,132 @@
-.App {
+body {
+  background: rgb(238, 174, 202);
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(24, 26, 28, 1) 100%);
+}
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4286f4;
+  color: #fff;
+  cursor: pointer;
+  
+}
+.centertext{
+  text-align: center;
+}
+.center-button {
+  display: block;
+  margin: 0 auto;
+}
+button:hover {
+  background-color: #2c5fd7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button:active {
+  background-color: #1c3d8c;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tennis-court {
+  width: 400px;
+  height: 200px;
+  background-color: green;
+  border: 2px solid white;
+  position: relative;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.net {
+  width: 2px;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.player {
+  width: 100px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: absolute;
+}
+
+.player-one {
+  color: rgb(4, 255, 0);
+  left: 10px;
+}
+
+.player-two {
+  color: red;
+  right: 10px;
+}
+
+.player h2 {
+  margin: 10px 0;
+}
+
+.player button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4286f4;
+  color: #fff;
+  cursor: pointer;
+}
+
+.player button:hover {
+  background-color: #2c5fd7;
+}
+
+.player button:active {
+  background-color: #1c3d8c;
+}
+.player-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.player-buttons button {
+  margin: 0 5px;
+}
+/* Table */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+thead {
+  background-color: #b71058;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+tbody tr:hover {
+  background-color: #0e8592;
+  color: white;
 }
