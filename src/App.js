@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./App.css";
 const App = () => {
+  // State variables
   const [player1Score, setPlayer1Score] = useState(0);
   const [player2Score, setPlayer2Score] = useState(0);
   const [gameOver, setGameOver] = useState(false);
@@ -8,7 +9,7 @@ const App = () => {
   const [setScore, setSetScore] = useState([0, 0]);
 
   const tennisPoints = ['Love', 'Fifteen', 'Thirty', 'Forty', 'Game'];
-
+  // Handle adding score for players
   const handleScore = (player) => {
     if (gameOver) return;
 
@@ -18,7 +19,7 @@ const App = () => {
       setPlayer2Score(player2Score + 1);
     }
   };
-
+  // Check if there is a winner and update set score
   const checkWinner = () => {
     if (
       (player1Score >= 4 && player1Score >= player2Score + 2) ||
@@ -29,7 +30,7 @@ const App = () => {
       updateSetScore();
     }
   };
-
+// Update set score based on the current game result
   const updateSetScore = () => {
     const newSetScore = [...setScore];
     if (player1Score > player2Score) {
@@ -39,7 +40,7 @@ const App = () => {
     }
     setSetScore(newSetScore);
   };
-
+// Start a new set by resetting scores and game over state
   const startNewSet = () => {
     setPlayer1Score(0);
     setPlayer2Score(0);
@@ -50,7 +51,7 @@ const App = () => {
   useEffect(() => {
     checkWinner();
   }, [player1Score, player2Score]);
-
+// Get the current point score based on the game rules
   const getCurrentPointScore = () => {
     if (player1Score >= 3 && player2Score >= 3) {
       if (player1Score === player2Score) {
@@ -67,7 +68,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Tennis Simulator</h1>
+      <h3>Tennis Simulator</h3>
       <div className='tennis-court'>
         
         <div className="net"></div>
